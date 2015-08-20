@@ -1,5 +1,5 @@
 # Excel-Add-in-Create-tab-Menu
-This code sample demonstrates a task pane app that is displayed in Excel 2013 when the app is first started. The task pane contains three tabs that are presented horizontally, each with a tab panel that contains some random text. Each tab also includes a button that is used to insert the text just from that tab into the worksheet.
+This code sample demonstrates a task pane add-in that is displayed in Excel 2013 when the add-in is first started. The task pane contains three tabs that are presented horizontally, each with a tab panel that contains some random text. Each tab also includes a button that is used to insert the text just from that tab into the worksheet.
 
 
 Figure 1 shows the task pane with the three-tab menu displayed.
@@ -27,9 +27,9 @@ This sample requires:
 
 The sample app contains the following components:
 
-* The TabMenus project, which contains the TabMenus.xml manifest file. The XML manifest file of an app for Office enables you to declaratively describe how the app should be activated when you install and use it with Office documents and applications.
+* The TabMenus project, which contains the TabMenus.xml manifest file. The XML manifest file of an add-in for Office enables you to declaratively describe how the add-in should be activated when you install and use it with Office documents and applications.
 * The TabMenusWeb project, which contains multiple template files. However, the three files that have been developed as part of this sample solution include:
-* TabMenus.html (in the Pages folder). This file contains the HTML user interface that is displayed in the task pane when the app is started. The markup consists of a <ul> (unordered list) element with a class name of tabs, where each <li> (list item) element is a tab in the menu. It also contains three <div> elements that have the IDs of panel1, panel2, and  panel3, which are the individual panels, each of which contains random text. It also contains an <input> element of type button that inserts the text from a particular panel into the worksheet when the button is chosen.
+* TabMenus.html (in the Pages folder). This file contains the HTML user interface that is displayed in the task pane when the add-in is started. The markup consists of a <ul> (unordered list) element with a class name of tabs, where each <li> (list item) element is a tab in the menu. It also contains three <div> elements that have the IDs of panel1, panel2, and  panel3, which are the individual panels, each of which contains random text. It also contains an <input> element of type button that inserts the text from a particular panel into the worksheet when the button is chosen.
 * App.css (in the Styles folder). This cascading style sheet (CSS) contains the code that specifies the look of the tabs and the elements each tab contains, as shown in the following code. Particularly notice the display: block setting that causes the tabs to appear horizontally.
 
 ```CSS
@@ -89,7 +89,7 @@ Finally, the following code formats the Insert Data button.
  
 ```
 
-* TabMenus.js (in the Scripts folder). This script file contains code that runs when the task pane app is loaded. Specifically, the script consists of commands from the JavaScript JQuery library. This startup script displays the first tab and panel.
+* TabMenus.js (in the Scripts folder). This script file contains code that runs when the task pane add-in is loaded. Specifically, the script consists of commands from the JavaScript JQuery library. This startup script displays the first tab and panel.
 
 ```JavaScript 
 
@@ -140,11 +140,11 @@ Office.context.document.setSelectedDataAsync($(elementId).text());
 }
 ``` 
 
-All other files are automatically provided by the Visual Studio project template for apps for Office, and they have not been modified in the development of this sample app.
+All other files are automatically provided by the Visual Studio project template for add-ins for Office, and they have not been modified in the development of this sample app.
 
 *Configure the sample*
 
-To configure the sample, open the TabMenus.sln file with Visual Studio 2012. No other configuration is necessary.
+To configure the sample, open the TabMenus.sln file with Visual Studio. No other configuration is necessary.
 
 *Build the sample*
 
@@ -156,7 +156,7 @@ To run the sample, choose the F5 key. After the task pane is displayed in Excel 
 
 *Troubleshooting*
 
-If the app fails to install, ensure that the XML in your TabMenus.xml manifest file parses correctly. Also look for any errors in the JavaScript code that could keep the tabs from being displayed. For example, you may have forgotten to end a statement with a semicolon, or you may have misspelled a method name or keyword. If the tabs and panels in the task pane do not look as you think they should, check the CSS styles to ensure that you didn't forget a colon between the style and its value, or leave off a semicolon at the end of a style statement.
+If the add-in fails to install, ensure that the XML in your TabMenus.xml manifest file parses correctly. Also look for any errors in the JavaScript code that could keep the tabs from being displayed. For example, you may have forgotten to end a statement with a semicolon, or you may have misspelled a method name or keyword. If the tabs and panels in the task pane do not look as you think they should, check the CSS styles to ensure that you didn't forget a colon between the style and its value, or leave off a semicolon at the end of a style statement.
 
 *Change log*
 
