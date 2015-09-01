@@ -60,9 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\App.css" />
-    <Content Include="Content\fabric.components.min.css" />
-    <Content Include="Content\fabric.min.css" />
-    <Content Include="Content\Office.css" />
     <Content Include="fonts\office365icons.svg" />
     <Content Include="packages.config" />
     <Content Include="Pages\TabMenus.html" />
